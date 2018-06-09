@@ -1,5 +1,9 @@
 {
     "extends": "airbnb",
+    "parser": "babel-eslint",
+    "ecmaFeatures": {
+        "arrowFunctions": true
+    },
     "rules": {
         "comma-dangle": ["error", "never"],
         "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
