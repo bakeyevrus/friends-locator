@@ -1,9 +1,14 @@
 import React from 'react';
-import Logo from './Logo';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import WelcomeScreen from './containers/WelcomeScreen';
+
+const theme = createMuiTheme();
 
 function App() {
   return (
-    <Logo />
+    <MuiThemeProvider theme={theme}>
+      <WelcomeScreen />
+    </MuiThemeProvider>
   );
 }
 
