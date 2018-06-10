@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Navbar from '../components/Navbar';
-import Logo from '../components/Logo';
-import FeedbackFormContainer from './FeedbackFormContainer';
+import Logo from './Logo';
+import FeedbackFormContainer from '../containers/FeedbackFormContainer';
+
+const locateScreenLink = props => <Link to="/locate" {...props} />;
 
 const styles = theme => ({
   root: {
@@ -39,18 +41,22 @@ function WelcomeScreen(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <Navbar />
       <div className={classes.welcomeSection}>
         <Logo />
         <Typography className={classes.text} align="center" paragraph variant="headline">
           Find out more about the favorite places of your friends or relatives
         </Typography>
         {/* <Button variant="raised" component={props => <Link to="/locate" {...props} />}> */}
-        <Button variant="contained" color="secondary" className={classes.welcomeButton}>
+        <Button
+          variant="contained"
+          color="secondary"
+          className={classes.welcomeButton}
+          component={locateScreenLink}
+        >
           Get Started
         </Button>
       </div>
-      <div className={classes.feedbackSection}>
+      <div id="feedback" className={classes.feedbackSection}>
         <FeedbackFormContainer />
       </div>
     </div>
