@@ -41,24 +41,27 @@ function WelcomeScreen(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <div className={classes.welcomeSection}>
-        <Logo />
-        <Typography className={classes.text} align="center" paragraph variant="headline">
-          Find out more about the favorite places of your friends or relatives
-        </Typography>
-        {/* <Button variant="raised" component={props => <Link to="/locate" {...props} />}> */}
-        <Button
-          variant="contained"
-          color="secondary"
-          className={classes.welcomeButton}
-          component={locateScreenLink}
-        >
-          Get Started
-        </Button>
-      </div>
-      <div id="feedback" className={classes.feedbackSection}>
-        <FeedbackFormContainer />
-      </div>
+      <section>
+        <div className={classes.welcomeSection}>
+          <Logo />
+          <Typography className={classes.text} align="center" paragraph variant="headline">
+            Find out more about the favorite places of your friends or relatives
+          </Typography>
+          <Button
+            variant="contained"
+            color="secondary"
+            className={classes.welcomeButton}
+            component={locateScreenLink}
+          >
+            Get Started
+          </Button>
+        </div>
+      </section>
+      <section>
+        <div id="feedback" className={classes.feedbackSection}>
+          <FeedbackFormContainer />
+        </div>
+      </section>
     </div>
   );
 }
