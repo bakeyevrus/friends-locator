@@ -27,7 +27,9 @@ function Navbar(props) {
         <Typography variant="title" color="inherit">
           Friends Locator
         </Typography>
-        <Button color="inherit" component={feedbackLink} />
+        <Button color="inherit" component={feedbackLink}>
+          Feedback
+        </Button>
       </Toolbar>
     </AppBar>
   );
